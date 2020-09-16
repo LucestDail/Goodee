@@ -6,7 +6,7 @@ package chap3;
  * 
  */
 
-public class OpExe6 {
+public class OpEx6 {
 
 	public static void main(String[] args) {
 	
