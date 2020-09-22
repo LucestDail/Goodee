@@ -7,6 +7,9 @@ class Math1{
 	int add2(int a, int b) {
 		return a+b;
 	}
+	void add3(int a, int b) {
+		System.out.println(a+b);
+	}
 }
 
 public class MathEx1 {
