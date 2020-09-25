@@ -1,4 +1,5 @@
-package test0928;
+package test;
+
 /*
  * command 라인에서 숫자 n을 입력받아 n숫자보다 작은 
  * 소수(primary number)의 갯수를 구하기

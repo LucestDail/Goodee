@@ -1,4 +1,5 @@
-package test0928;
+package test;
+
 
 /*
  * 대형 숫자 출력하기
