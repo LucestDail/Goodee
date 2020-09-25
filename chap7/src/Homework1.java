@@ -3,18 +3,24 @@ package src;
 class Food {
 	int price;
 	int point;
+	Food(int price){
+		this.price = price;
+		this.point = price/10;
+	}
 }
 
 class Fruit extends Food {
 	double brix;
+	Fruit(int price, double brix){
+		super(price);
+		this.brix = brix;
+	}
 }
 
 class Apple extends Fruit {
 
-	public Apple(int price, double brix) {
-		this.price = price;
-		this.point = price/10;
-		this.brix = brix;
+	Apple(int price, double brix){
+		super(price, brix);
 	}
 	public String toString() {
 		return "사과";
@@ -24,10 +30,8 @@ class Apple extends Fruit {
 
 class Peach extends Fruit {
 
-	public Peach(int price, double brix) {
-		this.price = price;
-		this.point = price/10;
-		this.brix = brix;
+	Peach(int price, double brix){
+		super(price, brix);
 	}
 	public String toString() {
 		return "복숭아";
@@ -37,14 +41,16 @@ class Peach extends Fruit {
 
 class Drink extends Food {
 	int ml;
+	Drink(int price, int ml){
+		super(price);
+		this.ml = ml;
+	}
 }
 
 class Cock extends Drink {
 
-	public Cock(int price, int ml) {
-		this.price = price;
-		this.point = price/10;
-		this.ml = ml;
+	Cock(int price, int ml){
+		super(price, ml);
 	}
 	public String toString() {
 		return "콜라";
@@ -53,10 +59,8 @@ class Cock extends Drink {
 }
 
 class Sidar extends Drink {
-	public Sidar(int price, int ml) {
-		this.price = price;
-		this.point = price/10;
-		this.ml = ml;
+	Sidar(int price, int ml){
+		super(price, ml);
 	}
 	public String toString() {
 		return "사이다";
@@ -65,14 +69,16 @@ class Sidar extends Drink {
 
 class Snack extends Food {
 	int gram;
+	Snack(int price, int gram){
+		super(price);
+		this.gram = gram;
+	}
 }
 
 class Biscuit extends Snack {
 
-	public Biscuit(int price, int gram) {
-		this.price = price;
-		this.point = price/10;
-		this.gram = gram;
+	Biscuit(int price, int gram){
+		super(price, gram);
 	}
 	public String toString() {
 		return "비스킷";
@@ -82,10 +88,8 @@ class Biscuit extends Snack {
 
 class Cookie extends Snack {
 
-	public Cookie(int price, int gram) {
-		this.price = price;
-		this.point = price/10;
-		this.gram = gram;
+	Cookie(int price, int gram){
+		super(price, gram);
 	}
 	public String toString() {
 		return "쿠키";
@@ -119,12 +123,15 @@ class Buyer2 {
 			if(f instanceof Fruit) {
 				fruitCart[fruitCount++] = f;
 				this.fruitPriceSum += f.price;
+				System.out.println("당도 : " + ((Fruit) f).brix);
 			}else if(f instanceof Drink) {
 				drinkCart[drinkCount++] = f;
+				System.out.println("용량 : " + ((Drink) f).ml);
 				this.drinkPriceSum += f.price;
 			}else if(f instanceof Snack) {
 				snackCart[snackCount++] = f;
 				this.snackPriceSum += f.price;
+				System.out.println("중량 : " + ((Snack) f).gram);
 			}
 			System.out.println(f + "를(을) "+f.price +"가격에 구입");
 		}else {
