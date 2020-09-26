@@ -1,8 +1,7 @@
-package test;
+package chap7.test;
 
 /*
- * 11*11 Å©±âÀÇ »ç°¢ÇüÀÌ ÀÖ´Ù°í °¡Á¤ÇÒ¶§ ´ÙÀ½ °á°ú¸¦ Ãâ·ÂµÇµµ·Ï ÇÁ·Î±×·¥ ÀÛ¼ºÇÏ±â
-
+ * 11*11 í¬ê¸°ì˜ ì‚¬ê°í˜•ì´ ìˆë‹¤ê³  ê°€ì •í• ë•Œ ë‹¤ìŒ ê²°ê³¼ë¥¼ ì¶œë ¥ë˜ë„ë¡ í”„ë¡œê·¸ë¨ ì‘ì„±í•˜ê¸°
 X         X
  X       X 
   X     X  
@@ -18,6 +17,28 @@ X         X
 */
 public class Exam2 {
  public static void main(String[] args) {
+	 final int ARRAY_MAX = 11;
+	 String[][] xArray = new String[ARRAY_MAX][ARRAY_MAX];
+	 for(int i = 0;i<ARRAY_MAX;i++) {
+		 for(int j = 0; j <ARRAY_MAX;j++) {
+			 if(i == j) {
+				 xArray[i][j] = "X";
+			 }else if(i == ARRAY_MAX- j-1) {
+				 xArray[i][j] = "X";
+			 }else {
+				 xArray[i][j] = " ";
+			 }
+		 }
+	 }
+	 
+	 for(String[] rowArray : xArray) {
+     	for(String column : rowArray) {
+     		System.out.print(column + "");
+     	}
+     	System.out.println();
+     }
+		 
+		 
  }
 }
 

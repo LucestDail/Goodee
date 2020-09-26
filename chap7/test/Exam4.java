@@ -1,16 +1,33 @@
-package test;
+package chap7.test;
 
 /*
- * command ¶óÀÎ¿¡¼­ ¼ıÀÚ nÀ» ÀÔ·Â¹Ş¾Æ n¼ıÀÚº¸´Ù ÀÛÀº 
- * ¼Ò¼ö(primary number)ÀÇ °¹¼ö¸¦ ±¸ÇÏ±â
+ * command ë¼ì¸ì—ì„œ ìˆ«ì nì„ ì…ë ¥ë°›ì•„ nìˆ«ìë³´ë‹¤ ì‘ì€ 
+ * ì†Œìˆ˜(primary number)ì˜ ê°¯ìˆ˜ë¥¼ êµ¬í•˜ê¸°
  * int =Integer.parseInt(args[0])
  * 
- * [°á°ú]
+ * [ê²°ê³¼]
  * 1,2,3,5,7,11,13,17,19
- * 20¼ıÀÚ±îÁöÀÇ ¼Ò¼öÀÇ °¹¼ö:9
+ * 20ìˆ«ìê¹Œì§€ì˜ ì†Œìˆ˜ì˜ ê°¯ìˆ˜:9
  */
+
 
 public class Exam4 {
 	public static void main(String[] args) {
+		int target = Integer.parseInt(args[0]);
+        int count = 0;
+        boolean judge = false;
+        for (int i = 2; i <= target; i++) { 
+            judge = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0)
+                    judge = false;
+            }
+                if (judge)  {
+                	  count++;
+                	  System.out.print(i + " ");
+                }
+            }
+		System.out.println();
+		System.out.println(target + "ìˆ«ìê¹Œì§€ì˜ ì†Œìˆ˜ì˜ ê°¯ìˆ˜ : " + count);
 	}
 }
