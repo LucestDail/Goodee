@@ -1,19 +1,16 @@
-package test;
+package chap7.test;
 
 /*
-±¹¾î, ¿µ¾î, ¼öÇĞ, ¹°¸®, È­ÇĞ, »çÈ¸, ÄÄÇ»ÅÍ Á¡¼ö¸¦  ÀÔ·Â¹ŞÀº ÈÄ, ÃÑÁ¡, Æò±ÕÀ» ±¸ÇÏ°í ÀÌµé ¸ğµÎ¿¡ ´ëÇÑ 
-¸·´ë±×·¡ÇÁ¸¦ ¾Æ·¡ Á¶°Ç¿¡ ¸Â°Ô ±×¸± ¼ö ÀÖ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-´Ü Æò±ÕÀº ¼Ò¼ıÁ¡ÀÌÇÏ´Â ¹ö¸®°í Á¤¼ö·Î Ã³¸® ÇÕ´Ï´Ù.
-
-[°á°ú]
-±¹¾î ¿µ¾î ¼öÇĞ ¹°¸® È­ÇĞ »çÈ¸ ÄÄÇ»ÅÍ Á¡¼ö¸¦(1 - 100) ÀÔ·ÂÇÏ¼¼¿ä
+êµ­ì–´, ì˜ì–´, ìˆ˜í•™, ë¬¼ë¦¬, í™”í•™, ì‚¬íšŒ, ì»´í“¨í„° ì ìˆ˜ë¥¼  ì…ë ¥ë°›ì€ í›„, ì´ì , í‰ê· ì„ êµ¬í•˜ê³  ì´ë“¤ ëª¨ë‘ì— ëŒ€í•œ 
+ë§‰ëŒ€ê·¸ë˜í”„ë¥¼ ì•„ë˜ ì¡°ê±´ì— ë§ê²Œ ê·¸ë¦´ ìˆ˜ ìˆëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+ë‹¨ í‰ê· ì€ ì†Œìˆ«ì ì´í•˜ëŠ” ë²„ë¦¬ê³  ì •ìˆ˜ë¡œ ì²˜ë¦¬ í•©ë‹ˆë‹¤.
+[ê²°ê³¼]
+êµ­ì–´ ì˜ì–´ ìˆ˜í•™ ë¬¼ë¦¬ í™”í•™ ì‚¬íšŒ ì»´í“¨í„° ì ìˆ˜ë¥¼(1 - 100) ì…ë ¥í•˜ì„¸ìš”
 88 77 99 44 55 66 100
-
-ÃÑÇÕ :529
-Æò±Õ :75
-ÃÖ´ë :100
-ÃÖ¼Ò :44
-
+ì´í•© :529
+í‰ê·  :75
+ìµœëŒ€ :100
+ìµœì†Œ :44
 100                           *   *        
  90           *               *   *        
  80   *       *               *   *        
@@ -24,10 +21,111 @@ package test;
  30   *   *   *   *   *   *   *   *   *   *
  20   *   *   *   *   *   *   *   *   *   *
  10   *   *   *   *   *   *   *   *   *   *
-       ±¹¾î  ¿µ¾î  ¼öÇĞ  ¹°¸®  È­ÇĞ  »çÈ¸ ÄÄÇ»ÅÍ  ÃÖ´ë  ÃÖ¼Ò  Æò±Õ
+   êµ­ì–´  ì˜ì–´  ìˆ˜í•™  ë¬¼ë¦¬  í™”í•™  ì‚¬íšŒ ì»´í“¨í„°  ìµœëŒ€  ìµœì†Œ  í‰ê· 
 */
+
+import java.util.Scanner;
 
 public class Exam1 {
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		final int SCORE_ARRAY_MAX = 10;
+		final int SCORE_ARRAY_MAXVALUE = 7;
+		final int SCORE_ARRAY_MINVALUE = 8;
+		final int SCORE_ARRAY_AVGVALUE = 9;
+		
+		int[] i_a_scoreArray = new int[SCORE_ARRAY_MAX];
+		int total = 0;
+		int average = 0;
+		System.out.println("êµ­ì–´ ì˜ì–´ ìˆ˜í•™ ë¬¼ë¦¬ í™”í•™ ì‚¬íšŒ ì»´í“¨í„° ì ìˆ˜ë¥¼(1 - 100) ì…ë ¥í•˜ì„¸ìš”");
+		//Scanner score
+        for (int i = 0; i < i_a_scoreArray.length-3; i++) {
+               i_a_scoreArray[i] =scan.nextInt();
+               total += i_a_scoreArray[i];
+        }
+        //min-max set
+		int max = i_a_scoreArray[0];
+		int min = i_a_scoreArray[0];
+        for(int i = 0; i < i_a_scoreArray.length-3; i++) {
+        	 if(max < i_a_scoreArray[i]) {
+          	   max = i_a_scoreArray[i];
+             }
+             if(min > i_a_scoreArray[i]) {
+          	   min = i_a_scoreArray[i];
+             }
+        }
+        //summary print
+        average = total / (SCORE_ARRAY_MAX-3);
+        i_a_scoreArray[SCORE_ARRAY_MAXVALUE] = max;
+        i_a_scoreArray[SCORE_ARRAY_MINVALUE] = min;
+        i_a_scoreArray[SCORE_ARRAY_AVGVALUE] = average;
+        for(int item : i_a_scoreArray)
+        System.out.print(item + " ");
+        System.out.println();
+        System.out.println("ì´í•© : " + total);
+        System.out.println("í‰ê·  : " + average);
+        System.out.println("ìµœëŒ€ : " + max);
+        System.out.println("ìµœì†Œ : " + min);
+        
+        //setting graph array
+        String[][] s_a_graphArray = new String[11][11];
+        int judge = 0;
+        for(int i = 0; i < s_a_graphArray.length; i++) {
+        	for(int j = 0; j < s_a_graphArray.length; j++) { //
+        		if(i == s_a_graphArray.length-1 && j > 0 && j < s_a_graphArray.length) {
+        			switch(j) {//í•˜ë‹¨ ì¶œë ¥
+        			case 1:
+        				s_a_graphArray[i][j] = "êµ­ì–´";break;
+        			case 2:
+        				s_a_graphArray[i][j] = "ì˜ì–´";break;
+        			case 3:
+        				s_a_graphArray[i][j] = "ìˆ˜í•™";break;
+        			case 4:
+        				s_a_graphArray[i][j] = "ë¬¼ë¦¬";break;
+        			case 5:
+        				s_a_graphArray[i][j] = "í™”í•™";break;
+        			case 6:
+        				s_a_graphArray[i][j] = "ì‚¬íšŒ";break;
+        			case 7:
+        				s_a_graphArray[i][j] = "ì»´í“¨í„°";break;
+        			case 8:
+        				s_a_graphArray[i][j] = "ìµœëŒ€";break;
+        			case 9:
+        				s_a_graphArray[i][j] = "ìµœì†Œ";break;
+        			case 10:
+        				s_a_graphArray[i][j] = "í‰ê· ";break;
+        				default:
+        					continue;
+        			}
+        		}else if(j == 0) {// ì¢Œì¸¡ ì¶œë ¥
+        			s_a_graphArray[i][j] = Integer.toString(100 - (i * 10));
+        			if(i == s_a_graphArray.length-1) {
+        				s_a_graphArray[i][j] = " ";
+        			}
+        		}else if(j > 0 && j < s_a_graphArray.length) {
+        			judge = (109-i_a_scoreArray[j-1]) / 10;
+        			if(i < judge) {
+        				s_a_graphArray[i][j] = "";
+        			}
+        			else {
+        				s_a_graphArray[i][j] = "*";
+        			}
+        		}else {
+        			s_a_graphArray[i][j] = " ";
+        		}
+        	}
+        }
+        
+        //print String graph Array
+        for(String[] rowArray : s_a_graphArray) {
+        	for(String column : rowArray) {
+        		System.out.print(column + "\t");
+        	}
+        	System.out.println();
+        }
+        
+        
+        
 	}
 }
