@@ -1,12 +1,13 @@
-package test;
+package chap7.test;
+
 
 
 /*
- * ´ëÇü ¼ıÀÚ Ãâ·ÂÇÏ±â
- * [°á°ú]
-     ÀÚ¸®¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(1~10)
+ * ëŒ€í˜• ìˆ«ì ì¶œë ¥í•˜ê¸°
+ * [ê²°ê³¼]
+     ìë¦¬ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”(1~10)
    5
-   0 ºÎÅÍ 9±îÁö 5ÀÚ¸® ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä
+   0 ë¶€í„° 9ê¹Œì§€ 5ìë¦¬ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”
    12345
    
   * *** *** * * *** 
@@ -14,8 +15,10 @@ package test;
   * *** *** *** *** 
   * *     *   *   * 
   * *** ***   * *** 
-
  */
+
+import java.util.Scanner;
+
 public class Exam8 {
 	public static String[][][] number = { 
 		{ // 0
@@ -91,5 +94,28 @@ public class Exam8 {
 	};
 	
 	public static void main(String[] args) {
+		
+		final int NUMBER_WIDTH = 4;
+		final int NUMBER_HEIGHT = 5;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("ìë¦¬ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”(1~10)");
+		int numberScope = scan.nextInt();
+		String[][][] resultStringArray = new String[numberScope][][];
+		System.out.println("0 ë¶€í„° 9ê¹Œì§€ "+numberScope+" ìë¦¬ìˆ˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		String inputString = scan.next();
+		for(int i = 0; i < inputString.length();i++) {
+			resultStringArray[i] = number[inputString.charAt(i)-'0'];
+		}
+		for(int i = 0; i < NUMBER_HEIGHT;i++) {
+			for(int j = 0; j < resultStringArray.length;j++) {
+				for(int k = 0; k < NUMBER_WIDTH;k++) {
+					System.out.print(resultStringArray[j][i][k]);
+				}
+			}
+			System.out.println();
+		}
+		
     }
 }

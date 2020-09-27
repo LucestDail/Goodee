@@ -1,21 +1,20 @@
-package test;
-
+package chap7.test;
 
 /*
-ÁÖ¾îÁø ¹è¿­À» ½Ã°è¹æÇâÀ¸·Î 90µµ È¸Àü½ÃÄÑ¼­  Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ¿Ï¼ºÇÏ½Ã¿À.
-ÁÖ¾îÁø ¹è¿­¿¡ °ª
+ì£¼ì–´ì§„ ë°°ì—´ì„ ì‹œê³„ë°©í–¥ìœ¼ë¡œ 90ë„ íšŒì „ì‹œì¼œì„œ  ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì™„ì„±í•˜ì‹œì˜¤.
+ì£¼ì–´ì§„ ë°°ì—´ì— ê°’
   **  
   **  
   *****
   *****
-
-[°á°ú]
+[ê²°ê³¼]
   ****
   ****
   ** 
   ** 
   ** 
  */
+
 public class Exam5 {
 	public static void main(String[] args) {
 		char[][] star = {
@@ -24,5 +23,19 @@ public class Exam5 {
 				{ '*', '*', '*', '*', '*' },
 				{ '*', '*', '*', '*', '*' } 
 		};
+		char[][] resultStar = new char[star[0].length][star.length];		
+		for(int i = 0; i < star.length; i++) {
+			for(int j = 0; j < star[i].length;j++) {
+				resultStar[j][star.length-1-i] = star[i][j];
+			}
+		}
+		
+		for(char[] rowArray : resultStar) {
+			for(char item : rowArray) {
+				System.out.print(item + " ");
+			}
+			System.out.println();
+		}
+		
 	}
 }

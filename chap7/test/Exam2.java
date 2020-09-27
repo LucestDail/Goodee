@@ -21,9 +21,7 @@ public class Exam2 {
 	 String[][] xArray = new String[ARRAY_MAX][ARRAY_MAX];
 	 for(int i = 0;i<ARRAY_MAX;i++) {
 		 for(int j = 0; j <ARRAY_MAX;j++) {
-			 if(i == j) {
-				 xArray[i][j] = "X";
-			 }else if(i == ARRAY_MAX- j-1) {
+			 if(i == j || i == ARRAY_MAX-j-1) {
 				 xArray[i][j] = "X";
 			 }else {
 				 xArray[i][j] = " ";

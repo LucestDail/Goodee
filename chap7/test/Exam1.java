@@ -70,34 +70,12 @@ public class Exam1 {
         
         //setting graph array
         String[][] s_a_graphArray = new String[11][11];
+        String[] indexStringArray = {"","국어","영어","수학","물리","화학","사회","컴퓨터","최대","최소","평균"};
         int judge = 0;
         for(int i = 0; i < s_a_graphArray.length; i++) {
         	for(int j = 0; j < s_a_graphArray.length; j++) { //
         		if(i == s_a_graphArray.length-1 && j > 0 && j < s_a_graphArray.length) {
-        			switch(j) {//하단 출력
-        			case 1:
-        				s_a_graphArray[i][j] = "국어";break;
-        			case 2:
-        				s_a_graphArray[i][j] = "영어";break;
-        			case 3:
-        				s_a_graphArray[i][j] = "수학";break;
-        			case 4:
-        				s_a_graphArray[i][j] = "물리";break;
-        			case 5:
-        				s_a_graphArray[i][j] = "화학";break;
-        			case 6:
-        				s_a_graphArray[i][j] = "사회";break;
-        			case 7:
-        				s_a_graphArray[i][j] = "컴퓨터";break;
-        			case 8:
-        				s_a_graphArray[i][j] = "최대";break;
-        			case 9:
-        				s_a_graphArray[i][j] = "최소";break;
-        			case 10:
-        				s_a_graphArray[i][j] = "평균";break;
-        				default:
-        					continue;
-        			}
+        			s_a_graphArray[i][j] = indexStringArray[j];
         		}else if(j == 0) {// 좌측 출력
         			s_a_graphArray[i][j] = Integer.toString(100 - (i * 10));
         			if(i == s_a_graphArray.length-1) {
