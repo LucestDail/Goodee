@@ -1,0 +1,85 @@
+package chap8;
+
+interface Printerable{
+	int INK = 100;
+	void print();
+}
+
+interface Scannerable{
+	void scan();
+}
+
+interface Faxable{
+	String FAX_NO = "02-1234-5678";
+	void send(String tel);
+	void receive(String tel);
+}
+
+interface Complexerable
+extends Printerable, Scannerable, Faxable{}
+class Complexer implements Complexerable{
+	int ink;
+	String fax_no;
+	Complexer(){
+		this.ink = INK;
+		this.fax_no = FAX_NO;
+	}
+
+	@Override
+	public void print() {
+		System.out.println("출력합니다...");
+		--ink;
+	}
+
+	@Override
+	public void scan() {
+		System.out.println("스캔합니다...");
+		
+	}
+
+	@Override
+	public void send(String tel) {
+		System.out.println(tel + "으로 받은 펙스를 보냅니다...");
+		
+	}
+
+	@Override
+	public void receive(String tel) {
+		System.out.println(tel + "으로 받은 펙스를 출력합니다...");
+		--ink;
+		
+	}
+	
+}
+
+public class InterfaceEx1 {
+
+	public static void main(String[] args) {
+		Complexer myPrint = new Complexer();
+		System.out.println("남은 잉크량 : " + myPrint.ink);
+		myPrint.print();
+		System.out.println("남은 잉크량 : " + myPrint.ink);
+		myPrint.scan();   
+		System.out.println("남은 잉크량 : " + myPrint.ink);
+		myPrint.send("010-1234-5678");   
+		System.out.println("남은 잉크량 : " + myPrint.ink);
+		myPrint.receive("010-2429-9420");   
+		System.out.println("남은 잉크량 : " + myPrint.ink);
+		if(myPrint instanceof Complexer) {
+			System.out.println("Complexer 객체임");
+		}
+		if(myPrint instanceof Complexerable) {
+			System.out.println("Complexerable 객체임");
+		}
+		if(myPrint instanceof Printerable) {
+			System.out.println("Printerable 객체임");
+		}
+		if(myPrint instanceof Scannerable) {
+			System.out.println("Scannerable 객체임");
+		}
+		if(myPrint instanceof Faxable) {
+			System.out.println("Faxable 객체임");
+		}
+	}
+
+}
