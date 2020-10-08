@@ -1,0 +1,17 @@
+package chap11;
+
+import java.util.Arrays;
+
+public class ArrayEx1 {
+	public static void main(String[] args) {
+		String[] arr1 = {"¿ù¸Å","ÀÌ¸ù·æ","Çâ´Ü","¹æÀÚ"};
+		for(String s : arr1) {
+			System.out.print(s + ",");
+		}
+		System.out.println();
+		Arrays.fill(arr1, "¼ºÃáÇâ");
+		for(String s : arr1)
+			System.out.println(s + ",");
+	}
+
+}

@@ -1,0 +1,26 @@
+package Exam;
+
+public class Exam7 {
+
+	public static void main(String[] args) {
+		System.out.println(round(3.1215,1));
+		System.out.println(round(3.1215,2));
+		System.out.println(round(3.1215,3));
+		System.out.println(round(3.1215,4));
+		
+		System.out.println(truncate(3.15345,1));
+		System.out.println(truncate(3.15345,2));
+		System.out.println(truncate(3.15345,3));
+		System.out.println(truncate(3.15345,4));
+	}
+
+	private static double truncate(double d, int i) {
+		return 1;
+	}
+
+	private static double round(double d, int i) {
+		
+		return 1;
+	}
+
+}

@@ -1,0 +1,12 @@
+package chap10;
+
+
+
+public class ExceptionEx1 {
+
+	public static void main(String[] args) {
+		System.out.println(args[0]);
+		System.out.println("프로그램 종료");
+	}
+	
+}

@@ -1,0 +1,22 @@
+package CrawlingProject;
+
+public class MainCralwer {
+	public static void main(String[] args) {
+		
+		String TargetURL = "https://arca.live/b/lastorigin";
+		String inputScope = "2";
+		
+		CrawlerFuction crawler = new CrawlerFuction();
+		
+		for(int i = 0; i < Integer.parseInt(inputScope);i++) {
+			
+			StringBuilder sb = new StringBuilder("");
+			sb.append(TargetURL + "?p=" + (i+1));
+			String url = sb.toString();
+			crawler.CrawlerFunction(url);
+
+		}
+	
+	}
+
+}

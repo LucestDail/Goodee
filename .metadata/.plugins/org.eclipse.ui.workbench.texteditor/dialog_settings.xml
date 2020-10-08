@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="CARD_MAX"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="true"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="CARD_NUM"/>
+			<item value="&#x09;&#x09;this.x = x;"/>
+			<item value="Solution"/>
+			<item value="s"/>
+			<item value="testCommands"/>
+			<item value="101"/>
+			<item value="targetInteger"/>
+		</list>
+		<list key="replacehistory">
+			<item value="CARD_MAX"/>
+			<item value="ValidatePinSolution"/>
+			<item value="commands"/>
+			<item value="CharToInteger"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="248"/>
+		<item key="DIALOG_Y_ORIGIN" value="398"/>
+	</section>
+</section>

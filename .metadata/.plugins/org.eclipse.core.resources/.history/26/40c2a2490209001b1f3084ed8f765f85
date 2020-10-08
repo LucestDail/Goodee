@@ -1,0 +1,27 @@
+package Exam;
+
+public class Exam7 {
+
+	public static void main(String[] args) {
+		System.out.println(round(3.1215,1));
+		System.out.println(round(3.1215,2));
+		System.out.println(round(3.1215,3));
+		System.out.println(round(3.1215,4));
+		
+		System.out.println(truncate(3.15345,1));
+		System.out.println(truncate(3.15345,2));
+		System.out.println(truncate(3.15345,3));
+		System.out.println(truncate(3.15345,4));
+	}
+
+	private static char[] truncate(double d, int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static char[] round(double d, int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

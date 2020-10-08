@@ -1,0 +1,15 @@
+package chap11;
+
+public class MyTest {
+	public static void main() {
+		String str = "hello";
+		System.out.println(str.contains("h"));
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,30 @@
+package Exam;
+
+import java.util.Scanner;
+
+public class Exam1 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("1 부터 10 까지 중 숫자를 입력하세요(종료 : 99)");
+		boolean end = true;
+		while(end) {
+			int target = 0;
+			try {
+				target = scan.nextInt();
+				if(target == 99) {
+					System.out.println("프로그램 종료");
+					break;
+				}
+				for(int i = 0; i < target; i++) {
+					System.out.print("*");
+				}
+				System.out.println();
+			}catch(Exception e) {
+				System.out.println("숫자만 입력하세요.");
+				e.printStackTrace();
+			}finally {
+				target = 0;
+			}
+		}
+	}
+}

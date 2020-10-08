@@ -1,0 +1,18 @@
+package src;
+
+class FinalValue {
+	final int NUM;
+
+	FinalValue(int num) {
+		this.NUM = num;
+	}
+}
+
+public class FinalValueEx1 {
+	public static void main(String[] args) {
+		FinalValue f1 = new FinalValue(100);
+		f1.NUM = 200;
+
+	}
+
+}

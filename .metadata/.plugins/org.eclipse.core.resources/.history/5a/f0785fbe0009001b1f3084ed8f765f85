@@ -1,0 +1,13 @@
+package Exam;
+
+public class Exam6 {
+
+	public static void main(String[] args) {
+		String str = "1,234";
+		str = str.replaceAll(",", "");
+		int strToInt = Integer.parseInt(str);
+		System.out.println(strToInt);
+		strToInt *= 10;
+		System.out.printf("%,d",strToInt);
+	}
+}

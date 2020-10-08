@@ -1,0 +1,32 @@
+package Exam;
+
+public class Exam8 {
+
+	public static void main(String[] args) {
+		System.out.println(delChar("(1!2@3^4~5","~!@#$%^&*()"));
+	}
+
+	private static String delChar(String target, String delete) {
+		StringBuilder sb = new StringBuilder("");
+		char[] deleteCharArray = new char[delete.length()];
+		
+		for(int i = 0; i < delete.length();i++) {
+			deleteCharArray[i] = delete.charAt(i);
+		}
+		
+		for(int i = 0; i < target.length(); i++) {
+			char compareTarget = target.charAt(i);
+			for(int j = 0; j < deleteCharArray.length; j++) {
+				if(deleteCharArray[i] == compareTarget) {
+					break;
+				}
+				if(j == deleteCharArray.length) {
+					sb.append(compareTarget);
+				}
+			}
+			
+		}
+		return sb.toString();
+	}
+
+}

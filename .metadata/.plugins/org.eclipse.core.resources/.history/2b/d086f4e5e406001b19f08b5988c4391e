@@ -1,0 +1,34 @@
+class CeaserSolution {
+	public static String solution(String s, int n) {
+		StringBuilder sb = new StringBuilder("");
+		char[] StringToCharArray = new char[s.length()];
+		for (int i = 0; i < s.length(); i++) {
+			StringToCharArray[i] = s.charAt(i);
+			if (StringToCharArray[i] >= 'A' && StringToCharArray[i] <= 'Z') {
+				// 대문자일 경우
+				if (StringToCharArray[i] + n >= 'Z') {
+					int remainder = StringToCharArray[i] + n - 'Z';
+					StringToCharArray[i] = (char) ('a' + remainder);
+				} else {
+					StringToCharArray[i] += n;
+				}
+			} else if (StringToCharArray[i] >= 'a' && StringToCharArray[i] <= 'z') {
+				// 소문자일 경우
+				if (StringToCharArray[i] + n >= 'z') {
+					int remainder = StringToCharArray[i] + n - 'z';
+					StringToCharArray[i] = (char) ('a' + remainder);
+				} else {
+					StringToCharArray[i] += n;
+				}
+			} else {
+				// 공백일 경우 다음 이동
+				continue;
+			}
+		}
+		for(char charItem : StringToCharArray) {
+			sb.append(charItem);
+		}
+		String answer = sb.toString();
+		return answer;
+	}
+}

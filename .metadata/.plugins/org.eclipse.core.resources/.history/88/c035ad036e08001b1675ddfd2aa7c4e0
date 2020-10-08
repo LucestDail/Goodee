@@ -1,0 +1,17 @@
+package Test;
+/*
+3.  다음 결과가 나오도록 Student 클래스 구현하기
+학생이 학번과 이름이 같으면 같은 학생으로 출력하고자 합니다.
+[결과]
+s1과 s2는 다른 객체입니다.
+s1 학생과 s2 학생은 같은 학생입니다.
+학생1:studno=1, name=홍길동, major=경영
+학생2:studno=1, name=홍길동, major=컴공
+ */
+public class Test3 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,31 @@
+
+
+class KeyPadSolution {
+	public static String solution(int[] numbers, String hand) {
+		//숫자배프 가상으로 2차원 배열 구성
+		String[][] keyPadArray = {
+				{"1","2","3"},
+				{"4","5","6"},
+				{"7","8","9"},
+				{"*","0","#"}
+		};
+		
+		//왼손 초기화 윙 치키
+		int [][] leftHandArray = new int[4][3];
+		leftHandArray[4][1] = 1;
+		
+		//오른손 초기화 윙 치키
+		int[][] rightHandArray = new int[4][3];
+		
+		//하나하나 탐색
+		for(int i = 0; i < numbers.length;i++) {
+			for(int keyHeightIndex = 0; keyHeightIndex < keyPadArray.length;keyHeightIndex++) {
+				
+			}
+			
+		}
+		
+		
+		return null;
+	}
+}

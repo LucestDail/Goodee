@@ -1,0 +1,18 @@
+package chap11;
+
+public class MyTest {
+	public static void main() {
+		String hello = "hello";
+		String holla = "holla";
+		String hellosame = "hello";
+		if(ifStringMethod(hello,hellosame))System.out.println("same");
+	}
+	
+	private static boolean ifStringMethod(String basic, String compare) {
+		if(basic.equals(compare)) {
+			return true;
+		}else
+			return false;
+	}
+
+}

@@ -1,0 +1,23 @@
+package Exam;
+
+public class Exam2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str = "ABC123";
+		System.out.println("main : " + str);
+		change(str);
+		System.out.println("change ÀÌÈÄ main : " + str);
+		
+
+	}
+
+	private static void change(String str) {
+		// TODO Auto-generated method stub
+		
+		str += "456";
+		System.out.println("change : " + str);
+	}
+
+}

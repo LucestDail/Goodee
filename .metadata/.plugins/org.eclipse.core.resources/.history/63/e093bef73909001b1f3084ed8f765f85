@@ -1,0 +1,37 @@
+package Test;
+
+import java.util.Arrays;
+
+class Student implements Comparable<Student> {
+	String name;
+	int kor, eng, math;
+
+	Student(String name, int kor, int eng, int math) {
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return (o.kor + o.eng + o.math) - (kor + eng + math);
+	}
+
+	public String toString() {
+		return "ÀÌ¸§:" + this.name + ", ±¹¾î:" + this.kor + ", ¿µ¾î=" + this.eng + ", ¼öÇÐ=" + this.math + ",ÃÑÁ¡:"
+				+ (kor + eng + math);
+	}
+
+}
+
+public class Test7 {
+	public static void main(String[] args) {
+		Student[] arr = { new Student("È«±æµ¿", 70, 60, 70), new Student("ÀÌ¸ù·æ", 55, 65, 90),
+				new Student("±è»ñ°«", 95, 65, 80), new Student("¼ºÃáÇâ", 95, 95, 80) };
+		Arrays.sort(arr);
+		for (Student s : arr)
+			System.out.println(s);
+	}
+}

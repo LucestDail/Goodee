@@ -1,0 +1,17 @@
+package Test1;
+
+public class Test6 {
+    public static void main(String[] args) {
+        String src = "12345";
+        System.out.println(fillZero(src, 10));
+        System.out.println(fillZero(src, -1));
+        System.out.println(fillZero(src, 3));
+        System.out.println(fillZero(null, 3));
+    }
+
+	private static String fillZero(String src, int i) {
+		String sf = String.format("%0" + i + "d", src);
+		System.out.println(String.format("%010d", 12345));
+		return sf;
+	}
+}

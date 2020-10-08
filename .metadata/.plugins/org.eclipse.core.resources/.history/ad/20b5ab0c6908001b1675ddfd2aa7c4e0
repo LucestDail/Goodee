@@ -1,0 +1,7 @@
+class KeyPadSolution {
+
+	public static Object solution(int[] numbers1, String hand1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

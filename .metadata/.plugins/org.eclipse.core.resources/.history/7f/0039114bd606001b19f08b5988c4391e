@@ -1,0 +1,18 @@
+package chap8;
+
+interface Action{
+	void action();
+}
+
+public class InterfaceEx4 {
+
+	public static void main(String[] args) {
+		Action a = new Action() {
+			public void action() {
+				System.out.println("Action 익명 함수");
+			}
+		};
+		a.action();
+	}
+
+}

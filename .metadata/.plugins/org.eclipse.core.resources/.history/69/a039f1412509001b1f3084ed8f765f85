@@ -1,0 +1,20 @@
+package chap11;
+
+/*
+ * switch 구문에서 조건값으로 사용 가능한 자료형
+ * byte, short, int, char + String
+ * Byte, Short, Integer, Character
+ */
+
+public class WrapperEx3 {
+	public static void main(String[] args) {
+		int data = 1;
+		switch(data) {
+		default : System.out.println("switch 테스트");
+		}
+		
+		
+		
+		
+	}
+}

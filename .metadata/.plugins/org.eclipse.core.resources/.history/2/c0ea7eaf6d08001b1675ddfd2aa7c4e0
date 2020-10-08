@@ -1,0 +1,16 @@
+package Test;
+/*
+2. 다음의 결과가 나오도록 Card 클래스를 구현하기
+[결과]
+c1과 c2는 다른 객체입니다.
+c1과 c2는 같은 내용의 카드 입니다.
+c1 카드 :(Spade,1)
+c2 카드 :(Spade,1)
+ */
+public class Test2 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

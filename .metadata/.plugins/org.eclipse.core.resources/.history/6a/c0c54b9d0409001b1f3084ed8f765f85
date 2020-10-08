@@ -1,0 +1,30 @@
+package Exam;
+
+public class Exam7 {
+
+	public static void main(String[] args) {
+		System.out.println(round(3.1215,1));
+		System.out.println(round(3.1215,2));
+		System.out.println(round(3.1215,3));
+		System.out.println(round(3.1215,4));
+		
+		System.out.println(truncate(3.15345,1));
+		System.out.println(truncate(3.15345,2));
+		System.out.println(truncate(3.15345,3));
+		System.out.println(truncate(3.15345,4));
+
+		
+		
+	}
+
+	private static double truncate(double d, int i) {
+		String doubleToString = Double.toString(d);
+		return Double.parseDouble(doubleToString.substring(0,i+2));
+	}
+
+	private static double round(double d, int i) {
+		String sf = String.format("%." + i + "f", d);
+		return Double.parseDouble(sf);
+	}
+
+}

@@ -1,0 +1,20 @@
+package Exam;
+
+import java.util.Scanner;
+
+public class Exam1 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		try {
+			int target = scan.nextInt();
+			for(int i = 0; i < target; i++) {
+				System.out.print("*");
+			}
+			
+		}catch(Exception e) {
+			System.out.println("숫자만 입력하세요.");
+		}
+
+	}
+}
