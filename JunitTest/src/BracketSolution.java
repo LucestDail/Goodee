@@ -1,67 +1,72 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
+
+/*스스로 생각을 하지못하는 코더.*/
 
 class BracketSolution {
 	public static String solution(String p) {
-		System.out.println("==========test Start==========");
-		StringBuilder sb = new StringBuilder();
-		List<String> list = new ArrayList<String>();
-		int inCheck = 0;
-		int outCheck = 0;
-		int index = 0;
-		// balance 분할
-		System.out.println("----------balancing test----------");
-		for (int i = 0; i < p.length(); i++) {
-			if (p.charAt(i) == '(') {
-				inCheck++;
-			} else {
-				outCheck++;
-			}
-			if (i > 0) {
-				if (inCheck == outCheck) {
-					list.add(p.substring(index, i + 1));
-					index = i + 1;
-				}
-			}
-		}
-
-		// correct check
-		System.out.println(list);
-		System.out.println("----------correcting test----------");
-		for (int i = 0; i < list.size(); i++) {
-			boolean checkBracket = false;
-			Stack<Character> stack = new Stack<Character>();
-			for (int j = 0; j < list.get(i).length(); j++) {
-				if(list.get(i).charAt(j) == '(') {
-					stack.push(list.get(i).charAt(j));
-				}else {
-					if(stack.isEmpty()) {
-						stack.push(list.get(i).charAt(j));
-					}else if(stack.peek() == '(') {
-						stack.pop();
-					}
-				}
-			}
-			if(stack.isEmpty()) {
-				System.out.println(list.get(i) + " correct bracket");
-				checkBracket = !checkBracket;
-				sb.append(list.get(i));
-			}else {
-				//incorrecting notice, make it correct
-				System.out.println(list.get(i) + " incorrect bracket");
-//				Stack<Character> corStack = new Stack<Character>();
-//				char[] corArray = new char[list.get(i).length()];
-//				for(int k = 0; k < list.get(i).length();k++) {
-//					char target = list.get(i).charAt(k);
-//
-//				}
-				
-
-			}
-		}
-		String answer = sb.toString();
-		System.out.println("==========test Ended==========");
-		return answer;
-	}
+		   return makeCorrect(p);
+    }
+    
+    // 문자열 w를 '올바른 문자열'로 
+    static String makeCorrect(String w) {
+        if(w.length() == 0) 
+            return "";
+        
+        int cut = division(w);
+        String u = w.substring(0, cut);
+        String v = w.substring(cut, w.length());
+    
+        if(isCorrect(u)) {
+            return u + makeCorrect(v);
+        }else {
+            String temp = '(' + makeCorrect(v) + ')';
+            u = u.substring(1, u.length()-1);
+            u = reverse(u);
+            return temp + u;
+        }
+        
+    }
+    
+    // w를 가장 작은 크기의 균형 문자열로 자를 수 있는 index 리턴 
+    static int division(String w) {
+        int close = 0, open = 0;
+        int i;
+        for( i = 0 ; i < w.length(); i++) {
+            if(w.charAt(i) == '(') {
+                open++;
+            }else
+                close++;
+            if(open == close)
+                return i+1;
+        }
+        return i;
+    }
+    
+    // 문자열 w의 옳은 문자열 여부 리턴 
+    static boolean isCorrect(String w) {
+        int count = 0;
+        for(int i = 0 ; i < w.length(); i++) {
+            if(w.charAt(i) == '(') {
+                count++;
+            }else
+                count--;
+            if(count < 0)
+                return false;
+        }
+        return count == 0;
+    }
+    
+    // 문자열 w의 괄호방향 뒤집기 
+    static String reverse(String w) {
+        
+        StringBuffer ret = new StringBuffer();
+        for(int i = 0 ; i < w.length() ; i++) {
+            if(w.charAt(i) == ')') {
+                ret.append('(');
+            }else
+                ret.append(')');
+        }
+        return ret.toString();
+    }
+	
 }
