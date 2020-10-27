@@ -1,9 +1,0 @@
-package chap11;
-
-public class MathEx1 {
-
-	public static void main(String[] args) {
-		System.out.println(CharSequence.compare("s", "ss"));
-	}
-
-}
