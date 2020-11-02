@@ -1,12 +1,13 @@
 package Test1029;
 
 import java.util.*;
+import java.util.function.IntPredicate;
 
 public class Test1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arr = new Random().ints(100, 1, 100).toArray();
+		int[] arr = new Random().ints(100, 1, 101).toArray();
 		int count = 0;
 		System.out.print("Prime number : ");
 		for(int item : arr) {

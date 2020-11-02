@@ -30,25 +30,25 @@ class Student {
 
 	@Override
 	public String toString() {
-		return "[name=" + name + ",eng=" + eng + ",math=" + math + ",총점:" + (eng + math) + "]";
+		return "[name=" + name + ",eng=" + eng + ",math=" + math + ",total:" + getTotal() + "]";
 	}
 }
 
 public class Test1 {
 	private static Student[] list = {
-			new Student("홍길동", 75, 80),
-			new Student("김삿갓", 85, 85),
-			new Student("이몽룡", 80, 70),
-			new Student("임꺽정", 90, 95)
+			new Student("hong", 75, 80),
+			new Student("kim", 85, 85),
+			new Student("lee", 80, 70),
+			new Student("lim", 90, 95)
 			};
 
 	public static void main(String[] args) {
-		System.out.println("영어최고점 학생=>" + getMaxOrMin((a,b) -> (a.getEng() >= b.getEng()) ? a : b));
-		System.out.println("영어최저점 학생=>" + getMaxOrMin((a,b) -> (a.getEng() <= b.getEng()) ? a : b));
-		System.out.println("수학최고점 학생=>" + getMaxOrMin((a,b) -> (a.getMath() >= b.getMath()) ? a : b));
-		System.out.println("수학최저점 학생=>" + getMaxOrMin((a,b) -> (a.getMath() <= b.getMath()) ? a : b));
-		System.out.println("합계최고점 학생=>" + getMaxOrMin((a,b) -> (a.getTotal() >= b.getTotal()) ? a : b));
-		System.out.println("합계최저점 학생=>" + getMaxOrMin((a,b) -> (a.getTotal() <= b.getTotal()) ? a : b));
+		System.out.println("eng max =>" + getMaxOrMin((a,b) -> (a.getEng() >= b.getEng()) ? a : b));
+		System.out.println("eng min =>" + getMaxOrMin((a,b) -> (a.getEng() <= b.getEng()) ? a : b));
+		System.out.println("math max =>" + getMaxOrMin((a,b) -> (a.getMath() >= b.getMath()) ? a : b));
+		System.out.println("math min =>" + getMaxOrMin((a,b) -> (a.getMath() <= b.getMath()) ? a : b));
+		System.out.println("total max =>" + getMaxOrMin((a,b) -> (a.getTotal() >= b.getTotal()) ? a : b));
+		System.out.println("total min =>" + getMaxOrMin((a,b) -> (a.getTotal() <= b.getTotal()) ? a : b));
 	}
 
 	private static Student getMaxOrMin(BinaryOperator<Student> f) {

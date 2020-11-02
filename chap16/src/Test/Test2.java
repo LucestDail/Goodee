@@ -17,6 +17,9 @@ public class Test2 {
 		System.out.println("짝수 최대값:" + maxOrMin((a,b) -> a >= b ? a : b, a->a%2 == 0));
 		System.out.println("홀수 최소값:" + maxOrMin((a,b) -> a <= b ? a : b, a->a%2 != 0));
 		System.out.println("짝수 최소값:" + maxOrMin((a,b) -> a <= b ? a : b, a->a%2 == 0));
+		System.out.println("최대값:" + maxOrMin((a,b) -> a >= b ? a : b, a->true));
+		System.out.println("최소값:" + maxOrMin((a,b) -> a <= b ? a : b, a->true));
+		
 	}
 
 	private static int maxOrMin(IntBinaryOperator op, IntPredicate p) {
