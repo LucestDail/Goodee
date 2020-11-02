@@ -13,9 +13,9 @@ public class WriterEx1 {
 		out.write('a');
 		out.write('b');
 		out.write('c');
-		out.write('°¡');
-		out.write('³ª');
-		out.write('´Ù');
+		out.write('ê°€');
+		out.write('ë‚˜');
+		out.write('ë‹¤');
 		out.flush();
 	}
 }
