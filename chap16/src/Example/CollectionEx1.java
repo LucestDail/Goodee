@@ -47,7 +47,7 @@ public class CollectionEx1 {
 		System.out.println(totals);
 
 		System.out.println("save total to List<Integer> sorting");
-		List<Integer> totalsSorting = Stream.of(strArr).map(Student::getTotal).sorted((o1,o2) -> o2.compareTo(o1)).collect(Collectors.toList());
+		List<Integer> totalsSorting = Stream.of(strArr).map(s->s.getEng() + s.getMath()).sorted((o1,o2) -> o2.compareTo(o1)).collect(Collectors.toList());
 		System.out.println(totalsSorting);
 		
 	}

@@ -24,9 +24,6 @@ public class MapEx1 {
 		
 		System.out.print("Total score : ");
 		list2.stream().mapToInt(s->s.getMath() + s.getEng()).forEach(s->System.out.print(s + " "));
-		// or...
-		list2.stream().mapToInt(Student::getTotal).forEach(s->System.out.print(s + " "));
-		System.out.println();
 		
 		System.out.print("Name : ");
 		list2.stream().map(Student::getName).forEach(s->System.out.print(s + " "));
