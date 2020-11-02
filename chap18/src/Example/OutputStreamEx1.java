@@ -13,9 +13,9 @@ public class OutputStreamEx1 {
 		out.write('a');
 		out.write('b');
 		out.write('c');
-		out.write('ê°€');
-		out.write('ë‚˜');
-		out.write('ë‹¤');
+		out.write('°¡');
+		out.write('³ª');
+		out.write('´Ù');
 		out.flush();
 
 	}
