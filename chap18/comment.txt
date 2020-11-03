@@ -1,0 +1,23 @@
+문자형 출력스트림 => 바이트형 출력 스트림 : 그런거 없다...
+
+바이트형 입력 스트림 : InputStream : 1 바이트씩 읽기
+문자형 입력 스트림 : Reader : 2 바이트씩 읽기
+바이트형 출력 스트림 : OutputStream : 1 바이트씩 쓰기
+문자형 출력 스트림 : Writer : 2 바이트씩 쓰기
+바이트형 입력 스트림 => 문자형 입력 스트림 : InputStreamReader
+바이트형 출력 스트림 => 문자형 출력 스트림 : OutputStreamWriter
+
+InputStream 주요 메소드
+1. int read() : 1바이트 읽어서 리턴
+2. int read(byte[] buf) : buf 크기만큼 읽어서 buf 에 저장, 실제로 읽은 바이트 수를 리턴
+3. int read(byte[] buf, int start, int len) : len 크기만큼 읽어서 start 인덱스부터 buf 에 저장하고, 실제로 읽은 바이트 수를 리턴
+4. available() : 읽기 가능한 바이트 리턴.
+		파일의 크기 : 100 읽기전 : 100
+		10바이트 읽음 -> 파일크기 : 90
+		100바이트 읽음 -> 파일크기 : 0
+
+Reader의 주요 메소드
+1. int read() : 2바이트 읽어서 리턴
+2. int read(char[] buf) : buf 크기만큼 읽어서 buf 에 저장, 실제로 읽은 문자 수를 리턴
+3. int read(char[] buf, int start, int len) : len 크기만큼 읽어서 start 인덱스부터 buf 에 저장하고, 실제로 읽은 문자 수를 리턴
+

@@ -1,0 +1,12 @@
+saving error message to filejava.lang.Exception: saving error message to file
+	at Example.FileOutputStreamEx2.secondMethod(FileOutputStreamEx2.java:19)
+	at Example.FileOutputStreamEx2.firstMethod(FileOutputStreamEx2.java:15)
+	at Example.FileOutputStreamEx2.main(FileOutputStreamEx2.java:12)
+Tue Nov 03 11:45:05 KST 2020 : ============
+
+saving error message to filejava.lang.Exception: saving error message to file
+	at Example.FileOutputStreamEx2.secondMethod(FileOutputStreamEx2.java:19)
+	at Example.FileOutputStreamEx2.firstMethod(FileOutputStreamEx2.java:15)
+	at Example.FileOutputStreamEx2.main(FileOutputStreamEx2.java:12)
+Tue Nov 03 11:53:05 KST 2020 : ============
+
