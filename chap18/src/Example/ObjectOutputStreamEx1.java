@@ -16,8 +16,8 @@ import java.io.Serializable;
  */
 
 class Customer implements Serializable{
-	private String name;
-	private int age;
+	private transient String name;
+	private transient int age;
 	public Customer(String name, int age) {
 		this.name = name;
 		this.age = age;
@@ -44,6 +44,8 @@ public class ObjectOutputStreamEx1 {
 		oos.writeObject(c1);
 		oos.writeObject(c2);
 		System.out.println(c1 + "," + c2);
+		oos.close();
+		fos.close();
 	}
 
 }

@@ -18,7 +18,12 @@ public class Test1 {
 				break;
 			}
 			try {
-				String fileName = inputKeyword.substring(0, inputKeyword.length()-4);
+				int lastdot = inputKeyword.lastIndexOf(".");
+				if(lastdot < 0) {
+					System.out.println("Wrong file format.");
+					continue;
+				}
+				String fileName = inputKeyword.substring(0, lastdot);
 				BufferedReader fileIn = new BufferedReader(new FileReader(inputKeyword));
 				StringBuffer sb = new StringBuffer(fileName + ".bak");
 				FileWriter fw = new FileWriter(sb.toString());
