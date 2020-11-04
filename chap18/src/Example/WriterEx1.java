@@ -13,9 +13,6 @@ public class WriterEx1 {
 		out.write('a');
 		out.write('b');
 		out.write('c');
-		out.write('가');
-		out.write('나');
-		out.write('다');
 		out.flush();
 	}
 }

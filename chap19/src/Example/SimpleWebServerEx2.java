@@ -3,11 +3,9 @@ package Example;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -41,7 +39,7 @@ public class SimpleWebServerEx2 {
 			System.out.println("client port : " + client.getPort());
 		}
 		public void run() {
-			BufferedInputStream fis = null;
+			BufferedInputStream bis = null;
 			try {
 				String line = br.readLine();
 				System.out.println("Heep Header : " + line);
@@ -51,10 +49,10 @@ public class SimpleWebServerEx2 {
 				if(filename.equals("")) {
 					filename = "index.html";
 				}
-				fis = new BufferedInputStream(new FileInputStream(filename));
-				byte[] data = new byte[fis.available()];
+				bis = new BufferedInputStream(new FileInputStream(filename));
+				byte[] data = new byte[bis.available()];
 				int len = 0;
-				while((len = fis.read(data)) != -1) {
+				while((len = bis.read(data)) != -1) {
 					ps.write(data,0,len);
 					ps.flush();
 				}
@@ -62,8 +60,8 @@ public class SimpleWebServerEx2 {
 				e.printStackTrace();
 			}finally {
 				try {
-					if(fis != null) {
-						fis.close();
+					if(bis != null) {
+						bis.close();
 					}
 					if(br != null) {
 						br.close();
