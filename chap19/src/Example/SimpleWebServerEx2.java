@@ -29,6 +29,7 @@ public class SimpleWebServerEx2 {
 			try {
 				br = new BufferedReader(new InputStreamReader(client.getInputStream()));
 				os = client.getOutputStream();
+				os.write("HTTP/1.0 200 OK\r\nContent-Type:text/html\r\n\r\n".getBytes());
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
