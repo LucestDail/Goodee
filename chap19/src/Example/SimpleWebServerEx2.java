@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -24,12 +25,12 @@ public class SimpleWebServerEx2 {
 	static class HttpThread extends Thread{
 		private Socket client;
 		BufferedReader br;
-		PrintStream ps;
+		OutputStream ps;
 		HttpThread(Socket client){
 			this.client = client;
 			try {
 				br = new BufferedReader(new InputStreamReader(client.getInputStream()));
-				ps = new PrintStream(client.getOutputStream());
+				ps = client.getOutputStream();
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
@@ -39,7 +40,7 @@ public class SimpleWebServerEx2 {
 			System.out.println("client port : " + client.getPort());
 		}
 		public void run() {
-			BufferedInputStream bis = null;
+			FileInputStream is = null;
 			try {
 				String line = br.readLine();
 				System.out.println("Heep Header : " + line);
@@ -49,10 +50,10 @@ public class SimpleWebServerEx2 {
 				if(filename.equals("")) {
 					filename = "index.html";
 				}
-				bis = new BufferedInputStream(new FileInputStream(filename));
-				byte[] data = new byte[bis.available()];
+				is = new FileInputStream(filename);
+				byte[] data = new byte[is.available()];
 				int len = 0;
-				while((len = bis.read(data)) != -1) {
+				while((len = is.read(data)) != -1) {
 					ps.write(data,0,len);
 					ps.flush();
 				}
@@ -60,8 +61,8 @@ public class SimpleWebServerEx2 {
 				e.printStackTrace();
 			}finally {
 				try {
-					if(bis != null) {
-						bis.close();
+					if(is != null) {
+						is.close();
 					}
 					if(br != null) {
 						br.close();
