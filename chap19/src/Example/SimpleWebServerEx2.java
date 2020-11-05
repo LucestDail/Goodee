@@ -1,12 +1,10 @@
 package Example;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -25,12 +23,12 @@ public class SimpleWebServerEx2 {
 	static class HttpThread extends Thread{
 		private Socket client;
 		BufferedReader br;
-		OutputStream ps;
+		OutputStream os;
 		HttpThread(Socket client){
 			this.client = client;
 			try {
 				br = new BufferedReader(new InputStreamReader(client.getInputStream()));
-				ps = client.getOutputStream();
+				os = client.getOutputStream();
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
@@ -54,8 +52,8 @@ public class SimpleWebServerEx2 {
 				byte[] data = new byte[is.available()];
 				int len = 0;
 				while((len = is.read(data)) != -1) {
-					ps.write(data,0,len);
-					ps.flush();
+					os.write(data,0,len);
+					os.flush();
 				}
 			}catch(IOException e) {
 				e.printStackTrace();
@@ -67,8 +65,8 @@ public class SimpleWebServerEx2 {
 					if(br != null) {
 						br.close();
 					}
-					if(ps != null) {
-						ps.close();
+					if(os != null) {
+						os.close();
 					}
 					if(client != null) {
 						client.close();
