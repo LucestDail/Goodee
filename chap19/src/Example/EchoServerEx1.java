@@ -43,7 +43,6 @@ class ServerThread extends Thread{
 		try {
 			br = new BufferedReader(new InputStreamReader(client.getInputStream()));
 			pw = new PrintWriter(client.getOutputStream());
-			pw.print("HTTP/1.0 200 OK\r\nContent-Type:text/html\r\n\r\n".getBytes());
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
