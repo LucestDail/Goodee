@@ -17,7 +17,7 @@ public class BaseBallServerEx {
 	static List<Integer> arr = numberSelect();
 
 	public static void main(String[] args) throws IOException {
-		ServerSocket server = new ServerSocket(44444);
+		ServerSocket server = new ServerSocket(8000);
 		while (true) {
 			System.out.println("Baseball Game Waiting for Client...");
 			Socket client = server.accept();

@@ -12,11 +12,7 @@ public class Client {
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		// TODO Auto-generated method stub
 		BufferedReader sysin = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("entering your access ip address(000.000.000.000 or localhost)");
-		String ip = sysin.readLine();
-		System.out.println("entering your access port(8000 or anything else)");
-		int port = sysin.read();
-		Socket client = new Socket(ip, port);
+		Socket client = new Socket("localhost", 8000);
 		BufferedReader sbr = new BufferedReader(new InputStreamReader(client.getInputStream()));
 		PrintWriter pw = new PrintWriter(client.getOutputStream());
 		while (true) {
