@@ -8,7 +8,9 @@ public class HIndexSolution {
 
 		int h = 0;
 		Arrays.sort(citations);
-
+		if(citations[0] == 0) {
+			return 0;
+		}
 		for (int i = 0; i < citations.length; i++) {
 			h = citations.length - i;
 			if (citations[i] >= h) {
